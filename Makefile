@@ -16,7 +16,9 @@ LDFLAGS_FLASH = --out-fmt-ihx --code-loc 0x1400 --code-size 0x6C00 \
 
 SRC = \
 	src/radio.c \
-	src/main.c
+	src/main.c \
+	src/hal.c \
+	src/modem.c
 
 ADB=$(SRC:.c=.adb)
 ASM=$(SRC:.c=.asm)
@@ -47,4 +49,8 @@ clean:
 	rm -f $(ADB) $(ASM) $(LNK) $(LST) $(REL) $(RST) $(SYM)
 	rm -f $(PROGS) $(PCDB) $(PLNK) $(PMAP) $(PMEM) $(PAOM) $(POMF)
 #	cd ../; rm -f $(PROGS)
+
+run: jobylink.hex
+	./bootload.py /dev/tty.u* download $(PROGS)
+	./bootload.py /dev/tty.u* run
 

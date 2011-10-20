@@ -134,6 +134,9 @@ __sfr __at 0x9B S1CON;	/* CPU Interrupt Flag 3 */
 #define S1CON_RFIF_1	(1 << 1)
 #define S1CON_RFIF_0	(1 << 0)
 
+// TIMIF
+__sfr __at 0xD8 TIMIF;
+
 /*
  * IRCON
  */

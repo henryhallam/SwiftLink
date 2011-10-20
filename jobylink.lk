@@ -18,5 +18,7 @@
 -l libfloat
 src/radio.rel
 src/main.rel
+src/hal.rel
+src/modem.rel
 
 -e
