@@ -14,7 +14,7 @@ void modem_init() {
   
   // set Timer 1 to modulo mode
   T1CTL = T1CTL_DIV_1 | T1CTL_MODE_MODULO;
-  TIMIF |= 1<<6;
+  TIMIF |= 1<<6;  // enable Timer1 overflow interrupt
 
 
   IEN1 |= IEN1_T1IE;
