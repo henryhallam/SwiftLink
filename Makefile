@@ -51,6 +51,8 @@ clean:
 #	cd ../; rm -f $(PROGS)
 
 run: jobylink.hex
+	@echo "\nPlease replug the contraption\n"
+	@until test -e /dev/tty.u*; do sleep .1; done
 	./bootload.py /dev/tty.u* download $(PROGS)
 	./bootload.py /dev/tty.u* run
 
