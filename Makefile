@@ -58,7 +58,7 @@ run: $(PROGS)
 	@echo "system, try e.g.:"
 	@echo "     make USBDEV=/dev/ttyACM0 run"
 	@until test -e $(USBDEV); do sleep .1; done
-	../bootload.py $(USBDEV) download $(PROGS)
-	../bootload.py $(USBDEV) run
+	./bootload.py $(USBDEV) download $(PROGS)
+	./bootload.py $(USBDEV) run
 
 
